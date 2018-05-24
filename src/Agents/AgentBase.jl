@@ -8,37 +8,12 @@
 abstract type AgentBase end
 
 """
-    get_arm_index( agent::AgentBase )
-
-Gets the index of next arm to pull.
-
-## Example
-```julia-repl
-
-```
-"""
-function get_arm_index( agent::AgentBase )
-    error( "No implementation of get_arm_index() for ", typeof(agent) );
-end
-
-"""
-    update_reward!( agent::AgentBase, r::Real )
-
-Updates the reward to bandit algorithm `agent`. `r` must a real number within valid range.
-"""
-function update_reward!( agent::AgentBase, r::Real )
-    error( "No implementation of update_reward!() for ", typeof(agent) );
-end
-
-"""
     reset!( agent::AgentBase )
 
 Resets the internal statistics of the bandit algorithm, except for the number of arms and other
 algorithm specific parameters. `reset!()` will make `agent` as fresh as it was first created.
 """
-function reset!( agent::AgentBase )
-    error( "No implementation of reset!() for ", typeof(agent) );
-end
+reset!( agent::AgentBase )
 
 """
     info_str( agent::AgentBase, latex::Bool = false )
@@ -46,10 +21,15 @@ end
 Return a information string about the agent and it's parameters.  If flag `latex` is set to
 `true`, then the returned string will be a compactable latex string.
 """
-function info_str( agent::AgentBase, latex::Bool = false )
-    error( "No Implementation of info_str() for ", typeof(agent) );
-end
+info_str( agent::AgentBase, latex::Bool = false )
 
+"""
+    show( agent::AgentBase )
+
+Prints information about agent into the specified I/O.
+```julia-repl
+```
+"""
 # import Base.show
 function Base.show( io::IO, ::MIME"text/plain", agent::AgentBase )
     print( io, @sprintf("Agent: %s",info_str(agent)) )

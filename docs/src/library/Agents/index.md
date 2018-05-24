@@ -9,26 +9,41 @@ CurrentModule = BanditOpt
 Agents
 ```
 
-## AgentBase
+## `AgentBase`
 ```@docs
 AgentBase
 ```
-### Common Interface
-#### `get_arm_index()`
+### Methods
 ```@docs
-get_arm_index
+show
 ```
-#### `update_reward!()`
 ```@docs
-update_reward!
+==
 ```
+```@docs
+Agents.make_agents_with_k
+```
+
+## `StationaryAgentBase`
+```@docs
+StationaryAgentBase
+```
+### Functions
 #### `reset!()`
 ```@docs
-reset!
+Agents.reset!
 ```
 #### `info_str()`
 ```@docs
-info_str
+Agents.info_str
+```
+#### `get_arm_index()`
+```@docs
+Agents.get_arm_index
+```
+#### `update_reward!()`
+```@docs
+Agents.update_reward!
 ```
 
-###
+## NonStationaryAgentBase

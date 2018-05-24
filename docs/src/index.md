@@ -1,6 +1,9 @@
 # BanditOpt.jl
 *BanditOpt.jl is a julia package to make it easy to experiment with Multi-Armed
 Bandit problems.*
+```@docs
+BanditOpt
+```
 
 ## Package Features
 This package implements popular MAB algorithms and arm models along with a clean API to

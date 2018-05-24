@@ -1,5 +1,7 @@
 """
-    ϵ-Greedy Implementation
+    epsGreedy( noOfArms, ϵ )
+Implements constant exploration ϵ-greedy agent. `noOfArms` is the number
+of arms to pick from and `ϵ` is the exploration factor.
 """
 
 type epsGreedy <: StationaryAgentBase
@@ -12,7 +14,7 @@ type epsGreedy <: StationaryAgentBase
     count::Vector{Int64}
     avgValue::Vector{Float64}
 
-    function epsGreedy( noOfArms::Int64, ϵ::Float64 )
+    function epsGreedy( noOfArms::UInt, ϵ::Float64 )
         new( noOfArms,
              0,
              0,
@@ -25,15 +27,11 @@ type epsGreedy <: StationaryAgentBase
 end
 
 function get_arm_index( agent::epsGreedy )
-    # if any(agent.count.==0)
-    #     agent.lastPlayedArm = rand( find(agent.count.==0) )
-    # else
-        if rand() > agent.ϵ
-            agent.lastPlayedArm = findmax(agent.avgValue)[2]
-        else
-            agent.lastPlayedArm = rand(1:agent.noOfArms)
-        end
-    # end
+    if rand() > agent.ϵ
+        agent.lastPlayedArm = findmax(agent.avgValue)[2]
+    else
+        agent.lastPlayedArm = rand(1:agent.noOfArms)
+    end
     return agent.lastPlayedArm
 end
 
@@ -69,8 +67,11 @@ end
 
 
 """
-    ϵ_n Greedy Implementation
-    Based on Auer, P., Bianchi, N. C., & Fischer, P. (2002). Finite time analysis of the multiarmed bandit problem. Machine Learning, 47, 235–256.
+    epsNGreedy( noOfArms, c , d )
+Implementats decaying exploration factor ϵ-greedy agent. `noOfArms` is the number of
+of options, `c` and `d` are algorithm dependent parameters.
+
+Reference: Auer, P., Bianchi, N. C., & Fischer, P. (2002). Finite time analysis of the multiarmed bandit problem. Machine Learning, 47, 235–256.
 """
 
 type epsNGreedy <: StationaryAgentBase

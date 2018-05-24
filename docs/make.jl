@@ -17,7 +17,9 @@ makedocs(
                 "library/Agents/stationary.md"
             ],
             "Arms" => Any[
-                "library/Arms/index.md"
+                "library/Arms/index.md",
+                "library/Arms/stationary.md",
+                "library/Arms/nonstationary.md"
             ]
         ],
         "Manual" => Any[

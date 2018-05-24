@@ -15,13 +15,17 @@ module Agents
     using Distributions
     using LaTeXStrings
     include( "Agents/AgentBase.jl" )
+    include( "Agents/StationaryAgentBase.jl" )
 
     export
         # Methods
         get_arm_index, update_reward!, reset!, info_str,
         show,
         # Agents
-        AgentBase
+        AgentBase,
+        # Stationary Agents
+        StationaryAgentBase,
+        epsGreedy, epsNGreedy
 end
 
 """
@@ -31,13 +35,25 @@ end
 Bandit algorithms. It define the following base types for creating new reward
 processes.
 - [ArmBase](@ref)
-- [StationaryArm](@ref)
-- [NonstationaryArm](@ref)
+- [StationaryArmBase](@ref)
+- [NonstationaryArmBase](@ref)
 
 """
 module Arms
     using Distributions
     include( "Arms/ArmBase.jl" )
+    include( "Arms/StationaryArms.jl" )
+    include( "Arms/NonStationaryArms.jl" )
+
+    export
+        # Methods
+        pull!, tick!, reset!,
+        # Arm Models
+        ArmBase,
+        # Stationary Arm Models
+        StationaryArmBase,
+        # Non-stationary Arm Models
+        NonstationaryArmBase
 end
 
 # -----------------------------  Exports ----------------------------------
@@ -51,10 +67,18 @@ export
         get_arm_index, update_reward!, reset!, info_str, show,
         # Agents
         AgentBase,
-    # Arms Modules
-    Arms
+        # Stationary Agents
+        StationaryAgentBase,
+        epsGreedy, epsNGreedy,
+    # Arms Module
+    Arms,
         # Methods
+        pull!, tick!, reset!,
         # Arm Models
-
+        ArmBase,
+        # Stationary Arm Models
+        StationaryArmBase,
+        # Non Staionary Arm Models
+        NonstationaryArmBase
 
 end # module
