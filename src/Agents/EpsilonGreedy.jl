@@ -14,7 +14,7 @@ type epsGreedy <: StationaryAgentBase
     count::Vector{Int64}
     avgValue::Vector{Float64}
 
-    function epsGreedy( noOfArms::UInt, ϵ::Float64 )
+    function epsGreedy( noOfArms::Int, ϵ::Float64 )
         new( noOfArms,
              0,
              0,
@@ -57,7 +57,7 @@ function reset!( agent::epsGreedy )
     nothing
 end
 
-function info_str( agent::epsGreedy, latex::Bool )
+function info_str( agent::epsGreedy, latex::Bool = false )
     if latex
         return @sprintf( "\$\\epsilon\$-Greedy (\$\\epsilon = %4.3f\$)", agent.ϵ )
     else
@@ -87,7 +87,7 @@ type epsNGreedy <: StationaryAgentBase
     count::Vector{Int64}
     avgValue::Vector{Float64}
 
-    function epsNGreedy( noOfArms::Int64, param_c::Real, param_d::Float64 )
+    function epsNGreedy( noOfArms::Int, param_c::Real, param_d::Float64 )
         new( noOfArms,
              0,
              0,

@@ -6,7 +6,7 @@
 `StationaryArmBase` is the concrete type for all the stationary arm models. Any
 subtype should implement ```pull!()``` method
 """
-abstract type StationaryArmBase end
+abstract type StationaryArmBase <: ArmBase end
 
 """
     Bernoulli( p )

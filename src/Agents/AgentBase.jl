@@ -13,7 +13,7 @@ abstract type AgentBase end
 Resets the internal statistics of the bandit algorithm, except for the number of arms and other
 algorithm specific parameters. `reset!()` will make `agent` as fresh as it was first created.
 """
-reset!( agent::AgentBase )
+reset!( agent::AgentBase ) = nothing
 
 """
     info_str( agent::AgentBase, latex::Bool = false )
@@ -21,7 +21,7 @@ reset!( agent::AgentBase )
 Return a information string about the agent and it's parameters.  If flag `latex` is set to
 `true`, then the returned string will be a compactable latex string.
 """
-info_str( agent::AgentBase, latex::Bool = false )
+info_str( agent::AgentBase, latex::Bool = false ) = nothing
 
 """
     show( agent::AgentBase )

@@ -1,5 +1,49 @@
 using BanditOpt
 using Base.Test
 
-# write your own tests here
-@test 1 == 2
+macro test_nothrow(ex)
+    quote
+        try
+            $(esc(ex))
+            true
+        catch e
+            print( "ERROR: " )
+            if isa( e, KeyError )
+                println( "KeyError: key ", e.key, " not found" )
+            else
+                println( e )
+            end
+            false
+        end
+    end
+end
+
+tests = [
+    # Agent specific tests
+    "Agents/epsGreedy",
+    # Arm specific tests
+    # Experiment specific tests
+];
+
+
+#=
+Use
+    ARGS = [ "sanity_check" ]; include( joinpath(Pkg.dir("MAB"),"test","runtests.jl") )
+or
+    ARGS = [ "Algorithms/epsGreedy" ]; include( joinpath(Pkg.dir("MAB"),"test","runtests.jl") )
+from REPL.
+=#
+if length(ARGS) > 0
+    tests = ARGS
+end
+
+@testset "Bandit Tests" begin
+for test_script in tests
+    fp = joinpath( dirname(@__FILE__), "$(test_script).jl" )
+    # println( "Testing : ", test_script )
+    # @time include( fp )
+    include( fp )
+end
+end
+
+nothing

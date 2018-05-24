@@ -45,15 +45,15 @@ module Arms
     include( "Arms/StationaryArms.jl" )
     include( "Arms/NonStationaryArms.jl" )
 
-    export
-        # Methods
-        pull!, tick!, reset!,
-        # Arm Models
-        ArmBase,
-        # Stationary Arm Models
-        StationaryArmBase,
-        # Non-stationary Arm Models
-        NonstationaryArmBase
+    # export
+    #     # Methods
+    #     pull!, tick!, reset!,
+    #     # Arm Models
+    #     ArmBase,
+    #     # Stationary Arm Models
+    #     StationaryArmBase,
+    #     # Non-stationary Arm Models
+    #     NonstationaryArmBase
 end
 
 # -----------------------------  Exports ----------------------------------
@@ -71,14 +71,14 @@ export
         StationaryAgentBase,
         epsGreedy, epsNGreedy,
     # Arms Module
-    Arms,
-        # Methods
-        pull!, tick!, reset!,
-        # Arm Models
-        ArmBase,
-        # Stationary Arm Models
-        StationaryArmBase,
-        # Non Staionary Arm Models
-        NonstationaryArmBase
+    Arms
+        # # Methods
+        # pull!, tick!, reset!,
+        # # Arm Models
+        # ArmBase,
+        # # Stationary Arm Models
+        # StationaryArmBase,
+        # # Non Staionary Arm Models
+        # NonstationaryArmBase
 
 end # module
