@@ -35,8 +35,6 @@ makedocs(
 deploydocs(
     repo    = "github.com/v-i-s-h/BanditOpt.jl.git",
     target  = "build",
-    osname  = "linux",
-    julia   = "release",
     deps    = nothing,
     make    = nothing
 )
