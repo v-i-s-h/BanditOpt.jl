@@ -1,38 +1,38 @@
 # Arms
 This section discusses the arm models implemented in this packages.
 ```@meta
-CurrentModule = BanditOpt
+CurrentModule = BanditOpt.Arms
 ```
 
 ```@docs
 Arms
 ```
 
-## ArmBase
+## `Arms.ArmBase`
 ```@docs
 ArmBase
 ```
 
 ### Functions
-#### `pull!()`
+#### `Arms.pull!()`
 ```@docs
 pull!
 ```
-#### `tick!()`
+#### `Arms.tick!()`
 ```@docs
 tick!
 ```
-#### `reset!()`
+#### `Arms.reset!()`
 ```@docs
-Arms.reset!
+reset!
 ```
 
-## `StationaryArmBase`
+## `Arms.StationaryArmBase`
 ```@docs
 StationaryArmBase
 ```
 
-## `NonstationaryArmBase`
+## `Arms.NonstationaryArmBase`
 ```@docs
 NonstationaryArmBase
 ```

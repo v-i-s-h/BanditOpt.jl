@@ -2,7 +2,7 @@
 This section discusses the common features of agents (algorithms) implemented in
 this packages.
 ```@meta
-CurrentModule = BanditOpt
+CurrentModule = BanditOpt.Agents
 ```
 
 ```@docs
@@ -21,7 +21,7 @@ show
 ==
 ```
 ```@docs
-Agents.make_agents_with_k
+make_agents_with_k
 ```
 
 ## `StationaryAgentBase`
@@ -31,19 +31,20 @@ StationaryAgentBase
 ### Functions
 #### `reset!()`
 ```@docs
-Agents.reset!
+reset!
 ```
 #### `info_str()`
 ```@docs
-Agents.info_str
+info_str
 ```
 #### `get_arm_index()`
 ```@docs
-Agents.get_arm_index
+get_arm_index
 ```
 #### `update_reward!()`
 ```@docs
-Agents.update_reward!
+update_reward!
 ```
 
-## NonStationaryAgentBase
+## `NonStationaryAgentBase`
+_TODO_

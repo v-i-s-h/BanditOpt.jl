@@ -34,9 +34,9 @@ end
 `ArmModels` module includes the different types of reward processes available for
 Bandit algorithms. It define the following base types for creating new reward
 processes.
-- [ArmBase](@ref)
-- [StationaryArmBase](@ref)
-- [NonstationaryArmBase](@ref)
+- [Arms.ArmBase](@ref)
+- [Arms.StationaryArmBase](@ref)
+- [Arms.NonstationaryArmBase](@ref)
 
 """
 module Arms
