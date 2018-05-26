@@ -29,15 +29,16 @@ module Agents
 end
 
 """
-    ArmModels
+    Arms
 
-`ArmModels` module includes the different types of reward processes available for
+`Arms` module includes the different types of reward processes available for
 Bandit algorithms. It define the following base types for creating new reward
 processes.
 - [Arms.ArmBase](@ref)
 - [Arms.StationaryArmBase](@ref)
 - [Arms.NonstationaryArmBase](@ref)
-
+The types and methods in `Arms` are not exported and need to be called e.g as
+`Arms.pull!()`
 """
 module Arms
     using Distributions

@@ -8,6 +8,12 @@ subtype should implement ```pull!()``` method
 """
 abstract type StationaryArmBase <: ArmBase end
 
+# Default method for interface
+pull!( arm::StationaryArmBase )     = nothing
+tick!( arm::StationaryArmBase )     = nothing
+reset!( arm::StationaryArmBase )    = nothing
+mean( arm::StationaryArmBase )      = Distributions.mean( arm.armDist )
+
 """
     Bernoulli( p )
 `Bernoulli` creates a Bernoulli arm with success probability `p`.
@@ -24,14 +30,42 @@ function pull!( arm::Bernoulli )
     return Distributions.rand(arm.armDist)
 end
 
-function tick!( arm::Bernoulli )
-    # Do nothing
-    nothing
+
+"""
+    Beta( α, β )
+
+`Beta` creates a Beta arm with parameters `α` and `β`.
+"""
+
+type Beta <: StationaryArmBase
+    armDist::Distributions.Beta
+
+    function Beta( α::Real, β::Real )
+        new( Distributions.Beta( α, β ) )
+    end
 end
 
-function reset!( arm::Bernoulli )
-    # Do nothing
-    nothing
+function pull!( arm::Beta )
+    return Distributions.rand( arm.armDist )
+end
+
+
+"""
+    Exponetial( θ )
+
+`Expoenential` creates a Expoenentially distributed arm with mean reward `θ`
+"""
+
+type Exponential <: StationaryArmBase
+    armDist::Distributions.Exponential
+
+    function Exponential( λ::Real ) # λ is the mean parameter
+        new( Distributions.Exponential(λ) )
+    end
+end
+
+function pull!( arm::Exponential )
+    return Distributions.rand( arm.armDist )
 end
 
 
@@ -53,14 +87,4 @@ end
 
 function pull!( arm::Normal )
     return rand( arm.armDist )
-end
-
-function tick!( arm::Normal )
-    # Do nothing
-    nothing
-end
-
-function reset!( arm::Normal )
-    # Do nothing
-    nothing
 end

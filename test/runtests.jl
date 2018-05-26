@@ -20,8 +20,9 @@ end
 
 tests = [
     # Agent specific tests
-    "Agents/epsGreedy",
+    "Agents/EpsGreedy",
     # Arm specific tests
+    "Arms/StationaryArms"
     # Experiment specific tests
 ];
 
