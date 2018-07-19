@@ -13,7 +13,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Home",
     "title": "BanditOpt",
     "category": "module",
-    "text": "BanditOpt is a Julia package for experimenting with various Multi-Armed Bandit algorithms.\n\n\n\n"
+    "text": "BanditOpt is a Julia package for experimenting with various Multi-Armed Bandit algorithms.\n\n\n\n\n\n"
 },
 
 {
@@ -101,7 +101,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Agents",
     "title": "BanditOpt.Agents",
     "category": "module",
-    "text": "BanditOpt.Agents module provides implementations of various multi-arm bandit algorithms and an unified API to access those algorithms. This includes base types for implementing various types of agents and the common interface.\n\n\n\n"
+    "text": "BanditOpt.Agents module provides implementations of various multi-arm bandit algorithms and an unified API to access those algorithms. This includes base types for implementing various types of agents and the common interface.\n\n\n\n\n\n"
 },
 
 {
@@ -117,7 +117,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Agents",
     "title": "BanditOpt.Agents.AgentBase",
     "category": "type",
-    "text": "AgentBase\n\nAgentBase is the base type for all MAB Algorithms\n\n\n\n"
+    "text": "AgentBase\n\nAgentBase is the base type for all MAB Algorithms\n\n\n\n\n\n"
 },
 
 {
@@ -133,7 +133,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Agents",
     "title": "Base.show",
     "category": "function",
-    "text": "show( agent::AgentBase )\n\nPrints information about agent into the specified I/O.\n\n\n\n\n\n"
+    "text": "show( agent::AgentBase )\n\nPrints information about agent into the specified I/O.\n\n\n\n\n\n\n\n"
 },
 
 {
@@ -141,7 +141,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Agents",
     "title": "Base.:==",
     "category": "function",
-    "text": "==\n\nCan be used to compare two agents.\n\n\n\n\n\n"
+    "text": "==\n\nCan be used to compare two agents.\n\n\n\n\n\n\n\n"
 },
 
 {
@@ -149,7 +149,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Agents",
     "title": "BanditOpt.Agents.make_agents_with_k",
     "category": "function",
-    "text": "make_agents_with_k( K::Int64, agent_list::Vector{} )\n\nReturns a vector of agents specified in agent_list with K arms.\n\n\n\n\n\n"
+    "text": "make_agents_with_k( K::Int64, agent_list::Vector{} )\n\nReturns a vector of agents specified in agent_list with K arms.\n\n\n\n\n\n\n\n"
 },
 
 {
@@ -165,7 +165,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Agents",
     "title": "BanditOpt.Agents.StationaryAgentBase",
     "category": "type",
-    "text": "StationaryAgentBase\n\nStationaryAgentBase is the base type for all agents designed to handle stationary arms. Even though it is not enforced, the assumption is the reward updated to stationary agents are from a stationary arm model.\n\n\n\n"
+    "text": "StationaryAgentBase\n\nStationaryAgentBase is the base type for all agents designed to handle stationary arms. Even though it is not enforced, the assumption is the reward updated to stationary agents are from a stationary arm model.\n\n\n\n\n\n"
 },
 
 {
@@ -189,7 +189,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Agents",
     "title": "BanditOpt.Agents.reset!",
     "category": "function",
-    "text": "reset!( agent::AgentBase )\n\nResets the internal statistics of the bandit algorithm, except for the number of arms and other algorithm specific parameters. reset!() will make agent as fresh as it was first created.\n\n\n\n"
+    "text": "reset!( agent::AgentBase )\n\nResets the internal statistics of the bandit algorithm, except for the number of arms and other algorithm specific parameters. reset!() will make agent as fresh as it was first created.\n\n\n\n\n\n"
 },
 
 {
@@ -205,7 +205,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Agents",
     "title": "BanditOpt.Agents.info_str",
     "category": "function",
-    "text": "info_str( agent::AgentBase, latex::Bool = false )\n\nReturn a information string about the agent and it\'s parameters.  If flag latex is set to true, then the returned string will be a compactable latex string.\n\n\n\n"
+    "text": "info_str( agent::AgentBase, latex::Bool = false )\n\nReturn a information string about the agent and it\'s parameters.  If flag latex is set to true, then the returned string will be a compactable latex string.\n\n\n\n\n\n"
 },
 
 {
@@ -221,7 +221,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Agents",
     "title": "BanditOpt.Agents.get_arm_index",
     "category": "function",
-    "text": "get_arm_index( agent::StationaryAgentBase )\n\nGets the index of next arm to pull.\n\nExample\n\n\n\n\n\n"
+    "text": "get_arm_index( agent::StationaryAgentBase )\n\nGets the index of next arm to pull.\n\nExample\n\n\n\n\n\n\n\n"
 },
 
 {
@@ -237,7 +237,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Agents",
     "title": "BanditOpt.Agents.update_reward!",
     "category": "function",
-    "text": "update_reward!( agent::StationaryAgentBase, r::Real )\n\nUpdates the reward to bandit algorithm agent. r must a real number within valid range.\n\n\n\n"
+    "text": "update_reward!( agent::StationaryAgentBase, r::Real )\n\nUpdates the reward to bandit algorithm agent. r must a real number within valid range.\n\n\n\n\n\n"
 },
 
 {
@@ -253,7 +253,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Agents",
     "title": "NonStationaryAgentBase",
     "category": "section",
-    "text": "_TODO_"
+    "text": "TODO"
 },
 
 {
@@ -277,7 +277,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Stationary Bandit Agents",
     "title": "BanditOpt.Agents.epsGreedy",
     "category": "type",
-    "text": "epsGreedy( noOfArms, ϵ )\n\nImplements constant exploration ϵ-greedy agent. noOfArms is the number of arms to pick from and ϵ is the exploration factor.\n\n\n\n"
+    "text": "epsGreedy( noOfArms, ϵ )\n\nImplements constant exploration ϵ-greedy agent. noOfArms is the number of arms to pick from and ϵ is the exploration factor.\n\n\n\n\n\n"
 },
 
 {
@@ -293,7 +293,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Stationary Bandit Agents",
     "title": "BanditOpt.Agents.epsNGreedy",
     "category": "type",
-    "text": "epsNGreedy( noOfArms, c , d )\n\nImplementats decaying exploration factor ϵ-greedy agent. noOfArms is the number of of options, c and d are algorithm dependent parameters.\n\nReference: Auer, P., Bianchi, N. C., & Fischer, P. (2002). Finite time analysis of the multiarmed bandit problem. Machine Learning, 47, 235–256.\n\n\n\n"
+    "text": "epsNGreedy( noOfArms, c , d )\n\nImplementats decaying exploration factor ϵ-greedy agent. noOfArms is the number of of options, c and d are algorithm dependent parameters.\n\nReference: Auer, P., Bianchi, N. C., & Fischer, P. (2002). Finite time analysis of the multiarmed bandit problem. Machine Learning, 47, 235–256.\n\n\n\n\n\n"
 },
 
 {
@@ -317,7 +317,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Nonstationary Bandit  Agents",
     "title": "Nonstationary Bandit  Agents",
     "category": "section",
-    "text": "This page lists stationary bandit agents available in the package._Under Construction_"
+    "text": "This page lists stationary bandit agents available in the package.Under Construction"
 },
 
 {
@@ -333,7 +333,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Arms",
     "title": "BanditOpt.Arms",
     "category": "module",
-    "text": "ArmModels\n\nArmModels module includes the different types of reward processes available for Bandit algorithms. It define the following base types for creating new reward processes.\n\nArms.ArmBase\nArms.StationaryArmBase\nArms.NonstationaryArmBase\n\n\n\n"
+    "text": "Arms\n\nArms module includes the different types of reward processes available for Bandit algorithms. It define the following base types for creating new reward processes.\n\nArms.ArmBase\nArms.StationaryArmBase\nArms.NonstationaryArmBase\n\nThe types and methods in Arms are not exported and need to be called e.g as Arms.pull!()\n\n\n\n\n\n"
 },
 
 {
@@ -349,7 +349,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Arms",
     "title": "BanditOpt.Arms.ArmBase",
     "category": "type",
-    "text": "ArmBase\n\nArmBase is the abtract type for all arm models in BanditOpt. It also defines the default methods for interfacing with each of the arm models\n\n\n\n"
+    "text": "ArmBase\n\nArmBase is the abtract type for all arm models in BanditOpt. It also defines the default methods for interfacing with each of the arm models\n\n\n\n\n\n"
 },
 
 {
@@ -373,7 +373,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Arms",
     "title": "BanditOpt.Arms.pull!",
     "category": "function",
-    "text": "pull!( arm::ArmBase )\n\nPulls an arm. Return the reward of the pull. If the arm is non-stationary, the underlying state of the arm is also updated.\n\n\n\n"
+    "text": "pull!( arm::ArmBase )\n\nPulls an arm. Return the reward of the pull. If the arm is non-stationary, the underlying state of the arm is also updated.\n\n\n\n\n\n"
 },
 
 {
@@ -389,7 +389,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Arms",
     "title": "BanditOpt.Arms.tick!",
     "category": "function",
-    "text": "tick!( arm::ArmBase )\n\nUpdates the underlying states of a non-stationary arm. This method is used to update the state of arm if it is not the pulled arm. Not required for stationary arm models.\n\n\n\n"
+    "text": "tick!( arm::ArmBase )\n\nUpdates the underlying states of a non-stationary arm. This method is used to update the state of arm if it is not the pulled arm. Not required for stationary arm models.\n\n\n\n\n\n"
 },
 
 {
@@ -405,7 +405,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Arms",
     "title": "BanditOpt.Arms.reset!",
     "category": "function",
-    "text": "reset!( arm::ArmBase )\n\nResets the underlying state of the arm. Used usually in non-stationary arm models.\n\n\n\n"
+    "text": "reset!( arm::ArmBase )\n\nResets the underlying state of the arm. Used usually in non-stationary arm models.\n\n\n\n\n\n"
 },
 
 {
@@ -421,7 +421,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Arms",
     "title": "BanditOpt.Arms.StationaryArmBase",
     "category": "type",
-    "text": "StationaryArmBase\n\nStationaryArmBase is the concrete type for all the stationary arm models. Any subtype should implement pull!() method\n\n\n\n"
+    "text": "StationaryArmBase\n\nStationaryArmBase is the concrete type for all the stationary arm models. Any subtype should implement pull!() method\n\n\n\n\n\n"
 },
 
 {
@@ -437,7 +437,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Arms",
     "title": "BanditOpt.Arms.NonstationaryArmBase",
     "category": "type",
-    "text": "NonstationaryArmBase\n\nNonstationaryArmBase is the concrete type for all nonstationary arm models. This includes rested, restless and evolving arm models. Any subtype should implement pull!(), tick!() and reset!() methods\n\n\n\n"
+    "text": "NonstationaryArmBase\n\nNonstationaryArmBase is the concrete type for all nonstationary arm models. This includes rested, restless and evolving arm models. Any subtype should implement pull!(), tick!() and reset!() methods\n\n\n\n\n\n"
 },
 
 {
@@ -469,7 +469,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Stationary Arm Models",
     "title": "BanditOpt.Arms.Bernoulli",
     "category": "type",
-    "text": "Bernoulli( p )\n\nBernoulli creates a Bernoulli arm with success probability p.\n\n\n\n"
+    "text": "Bernoulli( p )\n\nBernoulli creates a Bernoulli arm with success probability p.\n\n\n\n\n\n"
 },
 
 {
@@ -481,11 +481,43 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "library/Arms/stationary/#BanditOpt.Arms.Beta",
+    "page": "Stationary Arm Models",
+    "title": "BanditOpt.Arms.Beta",
+    "category": "type",
+    "text": "Beta( α, β )\n\nBeta creates a Beta arm with parameters α and β.\n\n\n\n\n\n"
+},
+
+{
+    "location": "library/Arms/stationary/#Beta-Arm-1",
+    "page": "Stationary Arm Models",
+    "title": "Beta Arm",
+    "category": "section",
+    "text": "Arms.Beta"
+},
+
+{
+    "location": "library/Arms/stationary/#BanditOpt.Arms.Exponential",
+    "page": "Stationary Arm Models",
+    "title": "BanditOpt.Arms.Exponential",
+    "category": "type",
+    "text": "Exponetial( θ )\n\nExpoenential creates a Expoenentially distributed arm with mean reward θ\n\n\n\n\n\n"
+},
+
+{
+    "location": "library/Arms/stationary/#Exponential-Arm-1",
+    "page": "Stationary Arm Models",
+    "title": "Exponential Arm",
+    "category": "section",
+    "text": "Arms.Exponential"
+},
+
+{
     "location": "library/Arms/stationary/#BanditOpt.Arms.Normal",
     "page": "Stationary Arm Models",
     "title": "BanditOpt.Arms.Normal",
     "category": "type",
-    "text": "Normal( μ, σ )\n\nCreates an arm with reward distributed as Normal random varaible with mean μ and standard deviation σ.\n\n\n\n"
+    "text": "Normal( μ, σ )\n\nCreates an arm with reward distributed as Normal random varaible with mean μ and standard deviation σ.\n\n\n\n\n\n"
 },
 
 {
@@ -510,6 +542,70 @@ var documenterSearchIndex = {"docs": [
     "title": "Non-stationary Arm Models",
     "category": "section",
     "text": "This section discusses the non-stationary arm models available in package."
+},
+
+{
+    "location": "library/Arms/nonstationary/#BanditOpt.Arms.Pulse",
+    "page": "Non-stationary Arm Models",
+    "title": "BanditOpt.Arms.Pulse",
+    "category": "type",
+    "text": "Pulse( period, changePoint, holdDuration [,isRestless] )\n\nPulse creates a pulse reward arm which switches between 0 and 1. period(Int) is the period of the pulse wave, changePoint (Int) is the point at which the pulse should switch from 0 to 1 from the start of period. holdDuration (Int) is the time for which the pulse should stay 1. isRestless (bool) sets whether the arm is restless or not.\n\n\n\n\n\n"
+},
+
+{
+    "location": "library/Arms/nonstationary/#Pulse-Arm-1",
+    "page": "Non-stationary Arm Models",
+    "title": "Pulse Arm",
+    "category": "section",
+    "text": "Arms.Pulse"
+},
+
+{
+    "location": "library/Arms/nonstationary/#BanditOpt.Arms.Sinusoidal",
+    "page": "Non-stationary Arm Models",
+    "title": "BanditOpt.Arms.Sinusoidal",
+    "category": "type",
+    "text": "Sinusoidal( period[, isRestless = true [, offset = 2*π*rand()]] )\n\nSinusoidal creates an arm which sinusoidally changes between 0 and 1 with period. isRestless (bool) sets whether the arm is restless or not. offset sets the offset for the arm (set to a random offset by default).\n\n\n\n\n\n"
+},
+
+{
+    "location": "library/Arms/nonstationary/#Sinusoidal-Arm-1",
+    "page": "Non-stationary Arm Models",
+    "title": "Sinusoidal Arm",
+    "category": "section",
+    "text": "Arms.Sinusoidal"
+},
+
+{
+    "location": "library/Arms/nonstationary/#BanditOpt.Arms.Square",
+    "page": "Non-stationary Arm Models",
+    "title": "BanditOpt.Arms.Square",
+    "category": "type",
+    "text": "Square( period::Int, chnagePoints::Dict{Int,Float64}[,isRestless=true] )\n\nSquare creates an arm which switches value at specified instances. Starts from a default value of 0 and changes to values as per the dictionary of changePoints.\n\narm1 = Arms.Square( 50, Dict(10=>0.5,25=>0.20,40=>1.0) )\n\n\n\n\n\n"
+},
+
+{
+    "location": "library/Arms/nonstationary/#Square-Arm-1",
+    "page": "Non-stationary Arm Models",
+    "title": "Square Arm",
+    "category": "section",
+    "text": "Arms.Square"
+},
+
+{
+    "location": "library/Arms/nonstationary/#BanditOpt.Arms.Variational",
+    "page": "Non-stationary Arm Models",
+    "title": "BanditOpt.Arms.Variational",
+    "category": "type",
+    "text": "Variational( variation, period[, isRestless=true[,offset=2π*rand()]] )\n\nVariational creates a nonstationary arm as mentioned in     Besbes, O., Gur, Y., & Zeevi, A. (2014). Optimal Exploration-Exploitation in a Multi-Armed-Bandit Problem with Non-stationary Rewards, 1–20.\n\n\n\n\n\n"
+},
+
+{
+    "location": "library/Arms/nonstationary/#Variational-Arm-1",
+    "page": "Non-stationary Arm Models",
+    "title": "Variational Arm",
+    "category": "section",
+    "text": "Arms.Variational"
 },
 
 {
