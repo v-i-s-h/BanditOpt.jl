@@ -4,8 +4,9 @@ os:
   - linux
   - osx
 julia:
-  - release
-  # - nightly
+  # - release
+  - 0.7.0-beta2
+  - nightly
 notifications:
   email: false
 git:
