@@ -1,5 +1,5 @@
 using BanditOpt
-using Base.Test
+using Test
 
 macro test_nothrow(ex)
     quote
@@ -38,7 +38,7 @@ if length(ARGS) > 0
     tests = ARGS
 end
 
-@testset "Bandit Tests" begin
+@testset "BanditOpt Tests" begin
 for test_script in tests
     fp = joinpath( dirname(@__FILE__), "$(test_script).jl" )
     # println( "Testing : ", test_script )

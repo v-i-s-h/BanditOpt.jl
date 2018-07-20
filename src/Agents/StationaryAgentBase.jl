@@ -6,7 +6,6 @@
 arms. Even though it is not enforced, the assumption is the reward updated to
 stationary agents are from a stationary arm model.
 """
-
 abstract type StationaryAgentBase <: AgentBase end
 
 """

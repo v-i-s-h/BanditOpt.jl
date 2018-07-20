@@ -14,6 +14,7 @@ of agents and the common interface.
 module Agents
     using Distributions
     using LaTeXStrings
+    using Printf
     include( "Agents/AgentBase.jl" )
     include( "Agents/StationaryAgentBase.jl" )
 

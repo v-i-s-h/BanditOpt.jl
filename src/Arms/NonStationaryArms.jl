@@ -16,7 +16,7 @@ should switch from 0 to 1 from the start of period. `holdDuration` (Int) is the 
 for which the pulse should stay 1. `isRestless` (bool) sets whether the arm is
 restless or not.
 """
-type Pulse <: NonstationaryArmBase
+mutable struct Pulse <: NonstationaryArmBase
     step::Int             # For tracking internally
     period::Int           # Period of the pulse
     changePoint::Int      # The point at which the signal goes high
@@ -40,7 +40,7 @@ function pull!( arm::Pulse )
         arm.step = 1
     end
 
-    return ((arm.step>=arm.changePoint)&&(arm.step<=arm.changePoint+arm.highDuration))?1:0;
+    return ((arm.step>=arm.changePoint)&&(arm.step<=arm.changePoint+arm.highDuration))  ? 1 : 0;
 end
 
 function tick!( arm::Pulse )
@@ -65,7 +65,7 @@ end
 `period`. `isRestless` (bool) sets whether the arm is restless or not. `offset`
 sets the offset for the arm (set to a random offset by default).
 """
-type Sinusoidal <: NonstationaryArmBase
+mutable struct Sinusoidal <: NonstationaryArmBase
     step::Int         # Time step
     period::Int       # Period of the sinusoidal wave
     isRestless::Bool    # Is this arm restless - True by default
@@ -108,7 +108,7 @@ a default value of `0` and changes to values as per the dictionary of changePoin
 arm1 = Arms.Square( 50, Dict(10=>0.5,25=>0.20,40=>1.0) )
 ```
 """
-type Square <: NonstationaryArmBase
+mutable struct Square <: NonstationaryArmBase
     step::Int                         # For internal tracking
     period::Int                       # Period at which wave repeats
     changePoints::Dict{Int,Float64}   # Dictionary of change points
@@ -163,7 +163,7 @@ end
 `Variational` creates a nonstationary arm as mentioned in
     Besbes, O., Gur, Y., & Zeevi, A. (2014). Optimal Exploration-Exploitation in a Multi-Armed-Bandit Problem with Non-stationary Rewards, 1–20.
 """
-type Variational <: NonstationaryArmBase
+mutable struct Variational <: NonstationaryArmBase
     step::Int64         # Time step
     variation::Float64  # Variation of the arms
     period::Float64     # Period of the sinusoidal wave

@@ -18,7 +18,7 @@ mean( arm::StationaryArmBase )      = Distributions.mean( arm.armDist )
     Bernoulli( p )
 `Bernoulli` creates a Bernoulli arm with success probability `p`.
 """
-type Bernoulli <: StationaryArmBase
+mutable struct Bernoulli <: StationaryArmBase
     armDist::Distributions.Bernoulli
 
     function Bernoulli( p::Real )
@@ -36,8 +36,7 @@ end
 
 `Beta` creates a Beta arm with parameters `α` and `β`.
 """
-
-type Beta <: StationaryArmBase
+mutable struct Beta <: StationaryArmBase
     armDist::Distributions.Beta
 
     function Beta( α::Real, β::Real )
@@ -55,8 +54,7 @@ end
 
 `Expoenential` creates a Expoenentially distributed arm with mean reward `θ`
 """
-
-type Exponential <: StationaryArmBase
+mutable struct Exponential <: StationaryArmBase
     armDist::Distributions.Exponential
 
     function Exponential( λ::Real ) # λ is the mean parameter
@@ -75,7 +73,7 @@ end
 Creates an arm with reward distributed as Normal random varaible with mean `μ`
 and standard deviation `σ`.
 """
-type Normal <: StationaryArmBase
+mutable struct Normal <: StationaryArmBase
     armDist::Distributions.Normal
 
     function Normal( μ::Real, σ::Real )

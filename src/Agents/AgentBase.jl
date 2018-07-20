@@ -30,7 +30,6 @@ Prints information about agent into the specified I/O.
 ```julia-repl
 ```
 """
-# import Base.show
 function Base.show( io::IO, ::MIME"text/plain", agent::AgentBase )
     print( io, @sprintf("Agent: %s",info_str(agent)) )
     for param in fieldnames(agent)
@@ -77,7 +76,7 @@ function ==( agent1::AgentBase, agent2::AgentBase )
     if typeof(agent1) != typeof(agent2)
         return false
     else
-        for param in fieldnames(agent1)
+        for param in fieldnames(typeof(agent1))
             if getfield(agent1,param) != getfield(agent2,param)
                 # info( "Failed at ", param )
                 return false
