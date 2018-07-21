@@ -60,16 +60,72 @@ end
 end
 
 @testset "Sinusoidal Arm" begin
+    # ----------------------------- Test Restless ------------------------------------------
+    arm = Arms.Sinusoidal( 22 ) # Should start with some random offset and restless
+    # Get first sample
+    sample1 = Arms.pull!( arm )
+    # Take 21 steps
+    for i = 1:21; Arms.pull!( arm ); end
+    sample2 = Arms.pull!( arm )
+    # Both samples should match
+    @test sample1 ≈ sample2
+    # Take some more steps
+    for i = 1:10; Arms.pull!( arm ); end
+    # Reset
+    Arms.reset!( arm )
+    # Take new sample and check against the first sample; They should match
+    @test Arms.pull!(arm) ≈ sample1
+
+    # ----------------------------- Test Rested case ---------------------------------------
+    arm = Arms.Sinusoidal( 22, isRestless = false )
+    sample1 = Arms.pull!( arm )
+    # Take 21 ticks, the samples should not match
+    for i = 1:21; Arms.tick!( arm ); end
+    @test Arms.pull!(arm) ≉ sample1
+    # Now pull 20 time
+    for i = 1:20; Arms.pull!( arm ); end
+    @test Arms.pull!(arm) ≈ sample1
     
 end
 
 @testset "Square Arm" begin
-    
+    # ---------------------------- Test Restless -------------------------------------------
+    arm = Arms.Square( 15, Dict(3=>0.10,7=>0.75,12=>0.30) )
+    # First 2 should be 0
+    @test all( [Arms.pull!(arm) for i = 1:2] .== 0 )
+    # Next 4 should be 0.10 (3-6)
+    @test all( [Arms.pull!(arm) for i = 1:4] .== 0.10 )
+    # Next 5 should be 0.75 (7-11)
+    @test all( [Arms.pull!(arm) for i = 1:5] .== 0.75 )
+    # Next 4 should be 0.30 (12-15)
+    @test all( [Arms.pull!(arm) for i = 1:4] .== 0.30 )
+    # Now, period is over, it should return to 0
+    @test Arms.pull!(arm) == 0.0
+    # Take random steps reset
+    for i = 1:4; Arms.pull!(arm); end
+    Arms.reset!( arm )
+    @test Arms.pull!(arm) == 0.0
+
+    # Test start points
+    arm = Arms.Square( 15, Dict(1=>0.33) )
+    @test Arms.pull!(arm) == 0.33
+    # --------------------------- Test Rested ----------------------------------------------
+    arm = Arms.Square( 15, Dict(3=>0.10,7=>0.75,12=>0.30), false )
+    @test all( [Arms.pull!(arm) for i = 1:2] .== 0 )
+    @test all( [Arms.pull!(arm) for i = 1:2] .== 0.10 )
+    for i = 1:5; Arms.tick!(arm); end
+    @test all( [Arms.pull!(arm) for i = 1:2] .== 0.10 )
+    @test all( [Arms.pull!(arm) for i = 1:5] .== 0.75 )
+
 end
 
-@testset "Variational Arm" begin
-
-end
+# @testset "Variational Arm" begin
+#     arm = Arms.Variational( 5, 10 )
+#     rewards = [ Arms.pull!(arm) for i = 1:5 ]
+#     # Calculate variation
+#     variation = sum( abs.(rewards[1:end-1]-rewards[2:end]) )
+#     @test variation ≈ 10.0
+# end
 
 
 end

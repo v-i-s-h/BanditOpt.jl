@@ -100,7 +100,7 @@ end
 
 
 """
-    Square( period::Int, chnagePoints::Dict{Int,Float64}[,isRestless=true] )
+    Square( period::Int, changePoints::Dict{Int,Float64}[,isRestless=true] )
 
 `Square` creates an arm which switches value at specified instances. Starts from
 a default value of `0` and changes to values as per the dictionary of changePoints.
@@ -157,37 +157,37 @@ function reset!( arm::Square )
     nothing
 end
 
-"""
-    Variational( variation, period[, isRestless=true[,offset=2π*rand()]] )
+# """
+#     Variational( variation, period[, isRestless=true[,offset=2π*rand()]] )
 
-`Variational` creates a nonstationary arm as mentioned in
-    Besbes, O., Gur, Y., & Zeevi, A. (2014). Optimal Exploration-Exploitation in a Multi-Armed-Bandit Problem with Non-stationary Rewards, 1–20.
-"""
-mutable struct Variational <: NonstationaryArmBase
-    step::Int64         # Time step
-    variation::Float64  # Variation of the arms
-    period::Float64     # Period of the sinusoidal wave
-    isRestless::Bool    # Is this arm restless - True by default
-    offset::Float64     # Initial phase, random by default
+# `Variational` creates a nonstationary arm as mentioned in
+#     Besbes, O., Gur, Y., & Zeevi, A. (2014). Optimal Exploration-Exploitation in a Multi-Armed-Bandit Problem with Non-stationary Rewards, 1–20.
+# """
+# mutable struct Variational <: NonstationaryArmBase
+#     step::Int64         # Time step
+#     variation::Real  # Variation of the arms
+#     period::Int     # Period of the sinusoidal wave
+#     isRestless::Bool    # Is this arm restless - True by default
+#     offset::Float64     # Initial phase, random by default
 
-    function Variational( variation::Float64, period::Float64; isRestless::Bool=true, offset::Float64=2*π*rand() )
-        new( 0, variation, period, isRestless, offset )
-    end
-end
+#     function Variational( variation::Real, period::Int; isRestless::Bool=true, offset::Float64=2*π*rand() )
+#         new( 0, variation, period, isRestless, offset )
+#     end
+# end
 
-function pull!( arm::Variational )
-    arm.step = arm.step + 1
-    return 1/2 + 1/2 * sin( arm.variation * π * (arm.step-1)/arm.period + arm.offset )  # To limit rewards between 0 and 1
-end
+# function pull!( arm::Variational )
+#     arm.step = arm.step + 1
+#     return 1/2 + 1/2 * sin( arm.variation * π * (arm.step-1)/arm.period + arm.offset )  # To limit rewards between 0 and 1
+# end
 
-function tick!( arm::Variational )
-    if arm.isRestless
-        arm.step = arm.step + 1
-    end
-    nothing
-end
+# function tick!( arm::Variational )
+#     if arm.isRestless
+#         arm.step = arm.step + 1
+#     end
+#     nothing
+# end
 
-function reset!( arm::Variational )
-    arm.step = 0
-    nothing
-end
+# function reset!( arm::Variational )
+#     arm.step = 0
+#     nothing
+# end
