@@ -43,6 +43,7 @@ The types and methods in `Arms` are not exported and need to be called e.g as
 """
 module Arms
     using Distributions
+    using Printf
     include( "Arms/ArmBase.jl" )
     include( "Arms/StationaryArms.jl" )
     include( "Arms/NonStationaryArms.jl" )

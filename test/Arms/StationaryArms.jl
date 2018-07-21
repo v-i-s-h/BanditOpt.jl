@@ -1,5 +1,4 @@
 # Tests for Stationary Arm Model
-using InteractiveUtils
 
 @testset "Stationary Arm Models" begin
 

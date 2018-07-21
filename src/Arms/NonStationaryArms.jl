@@ -40,7 +40,7 @@ function pull!( arm::Pulse )
         arm.step = 1
     end
 
-    return ((arm.step>=arm.changePoint)&&(arm.step<=arm.changePoint+arm.highDuration))  ? 1 : 0;
+    return ((arm.step>=arm.changePoint)&&(arm.step<=arm.changePoint+arm.highDuration-1))  ? 1 : 0;
 end
 
 function tick!( arm::Pulse )

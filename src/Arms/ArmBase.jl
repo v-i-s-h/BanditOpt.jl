@@ -30,3 +30,15 @@ tick!( arm::ArmBase ) = nothing
 Resets the underlying state of the arm. Used usually in non-stationary arm models.
 """
 reset!( arm::ArmBase ) = nothing
+
+"""
+Prints information about agent into the specified I/O.
+```julia-repl
+```
+"""
+function Base.show( io::IO, arm::ArmBase )
+    print( io, @sprintf("Arm: %s",typeof(arm)) )
+    for param in fieldnames(typeof(arm))
+        print( @sprintf("\n    %-16s: ",param), getfield(arm,param) )
+    end
+end

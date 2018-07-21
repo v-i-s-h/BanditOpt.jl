@@ -30,9 +30,9 @@ Prints information about agent into the specified I/O.
 ```julia-repl
 ```
 """
-function Base.show( io::IO, ::MIME"text/plain", agent::AgentBase )
+function Base.show( io::IO, agent::AgentBase )
     print( io, @sprintf("Agent: %s",info_str(agent)) )
-    for param in fieldnames(agent)
+    for param in fieldnames(typeof(agent))
         print( @sprintf("\n    %-16s: ",param), getfield(agent,param) )
     end
 end

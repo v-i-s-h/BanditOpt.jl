@@ -1,5 +1,6 @@
 using BanditOpt
 using Test
+import InteractiveUtils: subtypes, which
 
 macro test_nothrow(ex)
     quote
@@ -22,16 +23,17 @@ tests = [
     # Agent specific tests
     "Agents/EpsGreedy",
     # Arm specific tests
-    "Arms/StationaryArms"
+    "Arms/StationaryArms",
+    "Arms/NonStationaryArms"
     # Experiment specific tests
 ];
 
 
 #=
 Use
-    ARGS = [ "sanity_check" ]; include( joinpath(Pkg.dir("MAB"),"test","runtests.jl") )
+    ARGS = [ "sanity_check" ]; include( joinpath(Pkg.dir("BanditOpt"),"test","runtests.jl") )
 or
-    ARGS = [ "Algorithms/epsGreedy" ]; include( joinpath(Pkg.dir("MAB"),"test","runtests.jl") )
+    ARGS = [ "Algorithms/EpsGreedy" ]; include( joinpath(Pkg.dir("BanditOpt"),"test","runtests.jl") )
 from REPL.
 =#
 if length(ARGS) > 0
